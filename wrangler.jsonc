@@ -5,5 +5,18 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS"
+  },
+  // NOTE: database_id is a local placeholder; the real D1 id is wired in Task 4
+  // (production DB create → `wrangler d1 uuid` / deploy output).
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "pyrforos-votes",
+      "database_id": "local-dev"
+    }
+  ],
+  // Local dev value only; production uses `wrangler secret put VOTE_SALT`.
+  "vars": {
+    "VOTE_SALT": "local-dev-salt"
   }
 }
