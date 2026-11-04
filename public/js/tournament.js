@@ -34,6 +34,11 @@ export function shuffle(arr, rng) {
   return out;
 }
 
+/** Map a clicked option id to the API's choice letter ("a" | "b"). */
+export function choiceFor(pair, optionId) {
+  return optionId === pair.b.id ? "b" : "a";
+}
+
 /* ---- browser flow ---- */
 
 export async function tourney(container, { onCounts } = {}) {
@@ -138,7 +143,7 @@ export async function tourney(container, { onCounts } = {}) {
       title.textContent = opt.title;
       btn.appendChild(art);
       btn.appendChild(title);
-      btn.addEventListener("click", () => vote(opt.id));
+      btn.addEventListener("click", () => vote(choiceFor(pair, opt.id)));
       row.appendChild(btn);
     }
     stage.appendChild(row);

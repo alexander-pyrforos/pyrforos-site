@@ -1,5 +1,17 @@
 import { expect, it } from "vitest";
-import { accumulateExcluded, mulberry32, shuffle } from "../../public/js/tournament";
+import {
+  accumulateExcluded,
+  choiceFor,
+  mulberry32,
+  shuffle,
+} from "../../public/js/tournament";
+
+it("choiceFor maps the clicked option to the API's a|b letter", () => {
+  const pair = { a: { id: "V5" }, b: { id: "V2" } };
+  expect(choiceFor(pair, "V2")).toBe("b");
+  expect(choiceFor(pair, "V5")).toBe("a");
+  expect(choiceFor(pair, "V9")).toBe("a"); // unknown id: fail closed to "a" never "V9"
+});
 
 it("accumulateExcluded canonicalizes and accumulates pair keys", () => {
   const excluded = new Set();

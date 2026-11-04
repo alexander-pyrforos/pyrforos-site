@@ -61,7 +61,7 @@ export function renderDemo(container, scenario) {
       `<span class="demo-path"></span>` +
       `<span class="demo-note"></span>` +
       `<span class="demo-out"></span>`;
-    row.querySelector(".demo-path").textContent = `git:${b.path}`;
+    row.querySelector(".demo-path").textContent = b.path;
     row.querySelector(".demo-note").textContent = b.note;
     const out = row.querySelector(".demo-out");
     out.textContent = b.out;
