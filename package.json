@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.5.1",
+    "vitest": "^4.1.12"
+  },
+  "allowScripts": {
+    "workerd@1.20260815.1": true
+  },
+  "private": true,
+  "scripts": {
+    "test": "vitest run"
+  },
+  "type": "module"
+}
