@@ -1,5 +1,7 @@
 # DESIGN — визитка pyrforos.xyz
 
+> v2: hosting moved to Cloudflare Workers (see HANDOFF.md); design language unchanged.
+
 Трактовка: точный инструмент в тёмном исполнении — «инженер-одиночка при люксовом
 трейде часов». Тёмно-графитовый фон, латунный акцент, Instrument Serif как дисплейная
 гарнитура и JetBrains Mono для служебных меток (terminal, labels, chips); body — system.

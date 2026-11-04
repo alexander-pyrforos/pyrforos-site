@@ -1,0 +1,7 @@
+# pyrforos.xyz
+
+> Data & Automation Engineer Alexander Pyrforos (Prague): ERP, scraping pipelines, fine-tuned Qwen → llama.cpp/LM Studio LLM workflows, self-hosted infrastructure. Open to EU remote.
+
+## Pages
+
+- [/](https://pyrforos.xyz) Portfolio: agent demo, case dossiers, live voting product.

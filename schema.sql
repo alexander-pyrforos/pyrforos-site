@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS votes (id INTEGER PRIMARY KEY AUTOINCREMENT, pair_key TEXT NOT NULL, a_id TEXT NOT NULL, b_id TEXT NOT NULL, choice TEXT NOT NULL CHECK (choice IN ('a', 'b')), is_seed INTEGER NOT NULL DEFAULT 0 CHECK (is_seed IN (0, 1)), fingerprint TEXT, created_at TEXT NOT NULL DEFAULT (datetime('now')));
+CREATE INDEX IF NOT EXISTS idx_votes_pair ON votes (pair_key, is_seed);
