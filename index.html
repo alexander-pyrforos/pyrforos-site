@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oleksandr Pyrforos — Data &amp; Automation Engineer</title>
+<meta name="description" content="Data & Automation Engineer: ERP, data pipelines, LLM workflows, self-hosted infrastructure. Prague.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<style>
+  :root {
+    --bg: #fafafa; --fg: #1a1d21; --muted: #6b7280;
+    --card: #ffffff; --border: #e5e7eb; --accent: #2563eb;
+    --accent-fg: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111317; --fg: #e6e8ea; --muted: #9aa1ab;
+            --card: #1a1e24; --border: #2a2f36; --accent: #60a5fa;
+            --accent-fg: #0b1020; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 48px 20px 64px; }
+
+  header { margin-bottom: 40px; }
+  h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .role { color: var(--muted); font-size: 1.05rem; margin: 0; }
+  .role b { color: var(--fg); font-weight: 600; }
+
+  section { margin-bottom: 36px; }
+  h2 {
+    font-size: .8rem; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--muted); margin: 0 0 14px; font-weight: 600;
+  }
+  .summary { margin: 0; color: var(--fg); }
+
+  .card {
+    display: flex; flex-direction: column; gap: 4px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 18px; margin-bottom: 12px;
+  }
+  .card .top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .card h3 { margin: 0; font-size: 1rem; }
+  .card .kind { color: var(--muted); font-size: .78rem; white-space: nowrap; }
+  .card p { margin: 0; font-size: .92rem; color: var(--muted); }
+  .card .tags { margin-top: 2px; font-size: .78rem; color: var(--muted); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 999px; padding: 4px 12px; font-size: .82rem; color: var(--fg);
+  }
+
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--accent-fg);
+    border-radius: 8px; padding: 8px 16px; font-size: .9rem; font-weight: 500;
+  }
+  .btn:hover { text-decoration: none; opacity: .88; }
+  .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--fg); }
+
+  footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--border);
+           padding-top: 18px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Oleksandr Pyrforos</h1>
+    <p class="role"><b>Data &amp; Automation Engineer</b> — ERP · data pipelines · LLM workflows · self-hosted infra</p>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <p class="summary">
+      Scientist-turned-engineer with ~9 years as the sole IT / data / automation
+      person of an international luxury-goods trading business in Prague.
+      Built the company's entire IT stack from scratch — a custom ERP,
+      scraping pipelines, LLM extraction workflows, and self-hosted
+      infrastructure. I automate processes and try to minimize the human factor
+      where it shouldn't be.
+    </p>
+  </section>
+
+  <section>
+    <h2>Open-source projects</h2>
+    <a class="card" href="https://github.com/alexander-pyrforos/tinder-anything">
+      <span class="top"><h3>tinder-anything</h3><span class="kind">app</span></span>
+      <p>Tournament voting app: pairwise brackets for group decisions, aggregated ranking.</p>
+      <span class="tags">FastAPI · SQLAlchemy · Jinja2 · Docker · pytest</span>
+    </a>
+    <a class="card" href="https://github.com/alexander-pyrforos/google_sheets_backup_service">
+      <span class="top"><h3>google_sheets_backup_service</h3><span class="kind">service</span></span>
+      <p>Daily Google Sheets backups to a Linux server: verification, retention policy, Telegram notifications.</p>
+      <span class="tags">Python · Google Drive API · systemd · Telegram Bot API</span>
+    </a>
+    <a class="card" href="https://github.com/alexander-pyrforos/control_panel_ynh">
+      <span class="top"><h3>control_panel_ynh</h3><span class="kind">app</span></span>
+      <p>Self-hosted control panel (YunoHost app) for personal automation experiments.</p>
+      <span class="tags">Python · YunoHost · self-hosted</span>
+    </a>
+  </section>
+
+  <section>
+    <h2>Currently building (private / client work)</h2>
+    <div class="card">
+      <span class="top"><h3>Enterprise ERP &amp; data platform</h3><span class="kind">in production</span></span>
+      <p>Custom ERP (FastAPI + PostgreSQL) with competitive-intelligence scraping, an LLM pipeline (fine-tuned Qwen) extracting structured data from live supplier messages, distributed solve-workers, and KPI reporting.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Stack</h2>
+    <div class="chips">
+      <span class="chip">Python</span><span class="chip">FastAPI</span>
+      <span class="chip">PostgreSQL</span><span class="chip">LLM / Ollama</span>
+      <span class="chip">LangGraph</span><span class="chip">Fine-tuning</span>
+      <span class="chip">Scraping / Playwright</span><span class="chip">Chrome extensions</span>
+      <span class="chip">Linux / Debian</span><span class="chip">Docker</span>
+      <span class="chip">Self-hosted</span><span class="chip">Matrix / Nextcloud</span>
+      <span class="chip">GA4 · GSC · GTM</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="links">
+      <a class="btn" href="https://github.com/alexander-pyrforos">GitHub</a>
+      <a class="btn ghost" href="mailto:alexander.pyrforos@gmail.com">Email</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Oleksandr Pyrforos · pyrforos.xyz</footer>
+
+</div>
+</body>
+</html>
