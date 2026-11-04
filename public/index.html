@@ -77,11 +77,33 @@
   </section>
 
   <section>
-    <h2>In production</h2>
-    <div class="card">
-      <span class="top"><h3>Enterprise ERP &amp; data platform</h3><span class="kind">private · live</span></span>
-      <p>Custom ERP (FastAPI + PostgreSQL) with competitive-intelligence scraping, an LLM pipeline that fine-tuned Qwen to extract structured data from live supplier messages, distributed solve-workers, and KPI reporting.</p>
-      <span class="tags">fastapi · postgresql · qwen · unsloth · langgraph · playwright</span>
+    <h2>Dossiers</h2>
+    <div class="dossiers">
+      <details class="dossier" open>
+        <summary><span class="d-tag">ERP</span><span class="d-title">Enterprise ERP &amp; data platform</span></summary>
+        <p>Greenfield ERP (FastAPI + PostgreSQL): catalog, competitive intelligence, deal pipeline, KPI reporting — designed, built and run solo.</p>
+        <span class="d-tags">fastapi · postgresql · sqlalchemy · playwright</span>
+      </details>
+      <details class="dossier">
+        <summary><span class="d-tag">Scraping</span><span class="d-title">Competitor inventory watch</span></summary>
+        <p>Distributed scraping infrastructure: queue of solve-workers, dedupe, backpressure — one competitor inventory-watch replaced two dead parsers.</p>
+        <span class="d-tags">playwright · queues · dedupe · backpressure</span>
+      </details>
+      <details class="dossier">
+        <summary><span class="d-tag">LLM</span><span class="d-title">Fine-tuned extractor pipeline</span></summary>
+        <p>Fine-tuned Qwen (Unsloth → GGUF → llama.cpp + LM Studio) turning live supplier messages into structured deal data.</p>
+        <span class="d-tags">qwen · unsloth · gguf · llama.cpp · lm studio</span>
+      </details>
+      <details class="dossier">
+        <summary><span class="d-tag">SEO</span><span class="d-title">Audit against contractor reports</span></summary>
+        <p>Independent GSC/GA4 measurements exposed a 3–5× gap in a contractor's reported SEO performance.</p>
+        <span class="d-tags">gsc · ga4 · gtm · measurement</span>
+      </details>
+      <details class="dossier">
+        <summary><span class="d-tag">Infra</span><span class="d-title">Self-hosted stack</span></summary>
+        <p>Matrix/Synapse + Nextcloud on Debian/YunoHost; migrated media store MinIO → S3.</p>
+        <span class="d-tags">debian · yunohost · matrix · nextcloud · minio</span>
+      </details>
     </div>
   </section>
 
