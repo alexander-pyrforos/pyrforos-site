@@ -15,4 +15,8 @@
   ],
   // Local dev secret value lives in .dev.vars (git-ignored); production uses
   // `wrangler secret put VOTE_SALT` — a var here would collide with the secret.
+  "routes": [
+    { "pattern": "pyrforos.xyz", "custom_domain": true },
+    { "pattern": "www.pyrforos.xyz", "custom_domain": true }
+  ]
 }
