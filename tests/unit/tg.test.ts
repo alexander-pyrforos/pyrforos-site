@@ -26,7 +26,7 @@ it("buildTelegramMessage includes chat id, name, email and niche", () => {
 it("sendMessage attempts fetch exactly once with the bot URL and chat id", async () => {
   const spy = vi.fn().mockResolvedValue(new Response(JSON.stringify({ ok: true }), { status: 200 }));
   await sendMessage(
-    { TG_BOT_TOKEN: "secret-token", TG_CHAT_ID: "412981759" },
+    { TG_BOT_TOKEN: "secret-token", TG_CHAT_ID: "test-chat-id" },
     "hello from lead",
     spy as unknown as typeof fetch,
   );
@@ -36,7 +36,7 @@ it("sendMessage attempts fetch exactly once with the bot URL and chat id", async
     "https://api.telegram.org/botsecret-token/sendMessage",
   );
   const body = JSON.parse(String((init as RequestInit).body));
-  expect(body.chat_id).toBe("412981759");
+  expect(body.chat_id).toBe("test-chat-id");
   expect(body.text).toContain("hello from lead");
 });
 
