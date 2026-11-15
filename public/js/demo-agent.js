@@ -1,4 +1,4 @@
-/* Recorded agent demo: dealer message → JSON extract → git-tree of tool
+/* Recorded agent demo: seller message → JSON extract → git-tree of tool
    calls → merge → buyer report. No inference; a scripted timeline.
    renderDemo(container, scenario, {instant}) — builds the skeleton, wires
    replay/skip, exposes run({start}) for the caller; #demo-agent-root mounts
