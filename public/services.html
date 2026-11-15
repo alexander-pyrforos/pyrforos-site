@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — Alexander Pyrforos</title>
+<meta name="description" content="Two data services for sales and reputation-management teams: weekly lead feeds capturing businesses hit by fresh 1-2 star public reviews (packages from EUR 50 + VAT), and LLM pipelines that turn unstructured text into structured data. Scoped per project.">
+<meta property="og:title" content="Services — Alexander Pyrforos">
+<meta property="og:description" content="Two data services for sales and reputation-management teams: weekly lead feeds capturing businesses hit by fresh 1-2 star public reviews (packages from EUR 50 + VAT), and LLM pipelines that turn unstructured text into structured data. Scoped per project.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pyrforos.xyz/services">
+<meta property="og:site_name" content="pyrforos.xyz">
+<link rel="canonical" href="https://pyrforos.xyz/services">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"Service","name":"Weekly lead feed","serviceType":"B2B lead data feed","provider":{"@type":"Person","name":"Alexander Pyrforos","url":"https://pyrforos.xyz"},"areaServed":"Worldwide","description":"Weekly CSV feed of local businesses that recently received a fresh 1-2 star public review, with the review link, contact details and public emails.","offers":[{"@type":"Offer","name":"Starter","price":"50","priceCurrency":"EUR","url":"https://pyrforos.xyz/services","description":"50 leads per month, weekly CSV, one niche and region."},{"@type":"Offer","name":"Business","price":"100","priceCurrency":"EUR","url":"https://pyrforos.xyz/services","description":"100 leads per month, weekly CSV, owner names where public, emails prioritized."},{"@type":"Offer","name":"Professional","price":"300","priceCurrency":"EUR","url":"https://pyrforos.xyz/services","description":"300 leads per month, weekly CSV, multiple niches and regions, priority turnaround, monthly call."}]},{"@context":"https://schema.org","@type":"Service","name":"AI data structuring","serviceType":"LLM data pipeline development","provider":{"@type":"Person","name":"Alexander Pyrforos","url":"https://pyrforos.xyz"},"areaServed":"Worldwide","description":"Fine-tuned open-weight LLM pipelines turning unstructured text — messages, documents, catalogs — into clean structured records. Project-based pricing, scoped per pipeline."}]
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' font-size='88' fill='%23c9a227'>⌚</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="who">
+    <button id="theme-toggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <p class="eyebrow">data &amp; automation engineer · prague</p>
+    <h1>Data services for teams that <em>sell</em></h1>
+    <p class="lede">
+      Two services, built and run by one engineer. A weekly <b>lead feed</b>
+      that catches local businesses right after a fresh 1–2 star public
+      review lands — the moment they need reputation help. And <b>AI data
+      structuring</b>: LLM pipelines that turn messy unstructured text into
+      clean, database-ready records.
+    </p>
+  </header>
+
+  <section id="lead-feed">
+    <h2>Lead feed</h2>
+    <p class="section-note">A weekly CSV for sales and reputation-management teams.</p>
+    <ul>
+      <li>Business name, category, current public rating and total review count</li>
+      <li>The fresh 1–2 star review: date, text excerpt, direct link to that exact review</li>
+      <li>Phone, website, address</li>
+      <li>Owner/manager name where public (Business and Professional)</li>
+      <li>Contact email where publicly available</li>
+    </ul>
+  </section>
+
+  <section id="ai-structuring">
+    <h2>AI data structuring</h2>
+    <p class="section-note">LLM pipelines for unstructured text — built, fine-tuned, self-hosted.</p>
+    <p>
+      Fine-tuned open-weight models turn messages, documents and catalogs
+      into clean structured records — classification, extraction and
+      enrichment at pipeline scale, running on your own infrastructure.
+    </p>
+    <ul>
+      <li>Fields decided with you — exactly what your downstream systems need</li>
+      <li>Output as CSV, JSON or database-ready inserts</li>
+      <li>Fine-tuned open-weight models or frontier APIs, as the job fits</li>
+      <li>Runs on-prem or in an EU cloud</li>
+    </ul>
+    <p class="section-note">Project-based pricing — scoped per pipeline, no fixed tiers.</p>
+  </section>
+
+  <section id="example-row">
+    <h2>Example row — lead feed</h2>
+    <p class="section-note">Schematic example; data fields, not a quote.</p>
+    <div class="demo-json">Restaurant Name  ·  Dining  ·  3.6★ (412 reviews)  ·  2★ on 2026-11-12: "Waited 50 minutes and the food was cold." [review link]  ·  +61 xxx xxx xxx  ·  restaurantname.com.au  ·  owner name  ·  reservations@restaurantname.com.au</div>
+  </section>
+
+  <section id="packages">
+    <h2>Packages — lead feed</h2>
+    <div class="packages">
+      <div class="pkg">
+        <span class="pkg-name">Starter</span>
+        <span class="pkg-price">EUR 50 <small>+ VAT</small></span>
+        <ul>
+          <li>50 leads per month</li>
+          <li>Weekly CSV</li>
+          <li>One niche + region</li>
+          <li>Review link</li>
+          <li>Phone, website</li>
+        </ul>
+        <p class="pkg-note">Free 50-lead sample before you commit.</p>
+      </div>
+      <div class="pkg">
+        <span class="pkg-name">Business</span>
+        <span class="pkg-price">EUR 100 <small>+ VAT</small></span>
+        <ul>
+          <li>100 leads per month</li>
+          <li>Everything in Starter</li>
+          <li>Owner names where public</li>
+          <li>Contact emails prioritized</li>
+        </ul>
+        <p class="pkg-note">The working default for one sales team.</p>
+      </div>
+      <div class="pkg featured">
+        <span class="pkg-name">Professional</span>
+        <span class="pkg-price">EUR 300 <small>+ VAT</small></span>
+        <ul>
+          <li>300 leads per month</li>
+          <li>Everything in Business</li>
+          <li>Multiple niches and regions</li>
+          <li>Priority turnaround</li>
+          <li>Monthly review call</li>
+        </ul>
+        <p class="pkg-note">Multi-region reputation agencies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <h2>How it works</h2>
+    <ul>
+      <li>You name the niche and the city/region you target.</li>
+      <li>A free 50-lead sample arrives within 48 hours, as CSV (UTF-8 — opens in Excel and Sheets).</li>
+      <li>The weekly feed lands in your inbox. Cancel anytime.</li>
+    </ul>
+  </section>
+
+  <section id="compliance">
+    <h2>Compliance</h2>
+    <p>
+      A B2B data service: only publicly listed business contacts, opt-outs
+      honored immediately, sender always identified. This page is a product
+      description, not legal advice.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="cta">
+      <a class="btn" href="mailto:alexander.pyrforos@gmail.com?subject=Lead%20feed%20sample">Request the free sample</a>
+      <a class="btn ghost" href="mailto:alexander.pyrforos@gmail.com?subject=AI%20data%20structuring%20scope">Scope an AI pipeline</a>
+      <a class="btn ghost" href="/">Back to the portfolio</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Alexander Pyrforos</span>
+    <span class="mono">pyrforos.xyz</span>
+  </footer>
+
+</div>
+<script type="module" src="/js/theme.js"></script>
+</body>
+</html>
