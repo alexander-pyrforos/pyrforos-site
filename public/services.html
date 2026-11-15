@@ -58,15 +58,47 @@
     <h2>AI data structuring</h2>
     <p class="section-note">LLM pipelines for unstructured text — built, fine-tuned, self-hosted.</p>
     <p>
-      Fine-tuned open-weight models turn messages, documents and catalogs
-      into clean structured records — classification, extraction and
-      enrichment at pipeline scale, running on your own infrastructure.
+      Your team already receives the data — messages, emails, PDF catalogs,
+      price lists — as free text. Someone retypes it into your CRM by hand,
+      fields get lost and deals get slower. I build pipelines that read that
+      text and write clean, validated records straight into your systems —
+      classification, extraction and enrichment at pipeline scale.
     </p>
     <ul>
       <li>Fields decided with you — exactly what your downstream systems need</li>
-      <li>Output as CSV, JSON or database-ready inserts</li>
+      <li>Output as CSV, JSON or database-ready inserts, with validation per field</li>
       <li>Fine-tuned open-weight models or frontier APIs, as the job fits</li>
-      <li>Runs on-prem or in an EU cloud</li>
+      <li>Runs on-prem or in an EU cloud — your data never leaves your control</li>
+      <li>Accuracy measured on a labeled sample of your real data before launch</li>
+    </ul>
+  </section>
+
+  <section id="ai-example">
+    <h2>Example — messages to records</h2>
+    <p class="section-note">Schematic example; data fields, not a quote.</p>
+    <dl class="row-demo">
+      <div class="rd-item">
+        <dt>In — raw message</dt>
+        <dd>“Hi, looking for a CAT 320D excavator, 2018, around 12k hours, budget 85k EUR. Can you offer?”</dd>
+      </div>
+      <div class="rd-item">
+        <dt>Out — structured record</dt>
+        <dd>{ "category": "excavator", "make": "Caterpillar", "model": "320D", "year": 2018, "operating_hours": 12000, "price": 85000, "currency": "EUR" } + contact fields</dd>
+      </div>
+      <div class="rd-item">
+        <dt>Then</dt>
+        <dd>validated per field, deduplicated, delivered to your CRM / database / sheet automatically</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section id="ai-process">
+    <h2>How an AI pipeline is built</h2>
+    <ul>
+      <li>1 — Scoping: you show a sample of real messages; we agree on output fields and edge cases.</li>
+      <li>2 — Prototype: a working pipeline on your data, with accuracy measured against a labeled sample.</li>
+      <li>3 — Production: fine-tuned model or API, delivered as CSV/JSON/database writes, on-prem or EU cloud.</li>
+      <li>4 — Handover: monitoring, retraining path, documented — the pipeline is yours, no ongoing lock-in.</li>
     </ul>
     <p class="section-note">Project-based pricing — scoped per pipeline, no fixed tiers.</p>
   </section>
