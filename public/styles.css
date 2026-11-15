@@ -224,6 +224,7 @@
     border: 1px solid var(--line); border-radius: 8px;
     padding: 12px 14px; margin: 0 0 16px;
     white-space: pre;
+    overflow-x: auto;
     max-width: 100%;
   }
   .demo-tok { display: block; color: var(--muted); white-space: pre; }
