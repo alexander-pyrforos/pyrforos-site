@@ -244,6 +244,20 @@
   .btn.ghost { background: transparent; border: 1px solid var(--line-strong); color: var(--fg); }
   .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
 
+  /* ---- consent banner ---- */
+  .consent-bar {
+    position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50;
+    max-width: 660px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    background: var(--card); border: 1px solid var(--line-strong); border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 12px 32px -18px #00000066;
+  }
+  .consent-bar p { margin: 0; font-size: .82rem; color: var(--muted); max-width: 40ch; }
+  .consent-bar a { color: var(--accent); }
+  .consent-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .consent-actions .btn { font-size: .8rem; padding: 7px 14px; }
+
   footer {
     color: var(--muted); font-size: .78rem; padding-top: 18px;
     border-top: 1px solid var(--line); margin-top: 8px;
