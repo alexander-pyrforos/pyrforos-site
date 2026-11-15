@@ -6,3 +6,4 @@
 
 - [/](https://pyrforos.xyz) Portfolio: agent demo, case dossiers, live voting product.
 - [/services](https://pyrforos.xyz/services) Data services: weekly lead feed for sales and reputation teams (packages EUR 50/100/300 + VAT) and AI data structuring (LLM pipelines, project pricing). Contents, delivery, sample request.- [/leads-for-reputation-agencies](https://pyrforos.xyz/leads-for-reputation-agencies) Guide: what negative review leads are, why the 72-hour window matters, how agencies buy them as a weekly feed (EUR 50/100/300 + VAT). FAQ.
+- [/guides](https://pyrforos.xyz/guides) Index of guides for sales and reputation-management teams.
