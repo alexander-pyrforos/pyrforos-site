@@ -49,6 +49,14 @@
 
   /* ---- hero ---- */
   .who { margin-bottom: 44px; }
+  .site-nav {
+    display: flex; gap: 14px; margin: 0 0 16px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  }
+  .site-nav a { color: var(--muted); }
+  .site-nav a:hover { color: var(--accent); text-decoration: none; }
+  .site-nav a[aria-current="page"] { color: var(--accent); }
   .eyebrow {
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
