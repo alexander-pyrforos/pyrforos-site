@@ -4,6 +4,8 @@ export interface Env {
   ASSETS: Fetcher;
   DB?: D1Database;
   VOTE_SALT?: string;
+  TG_BOT_TOKEN?: string;
+  TG_CHAT_ID?: string;
 }
 
 export default {
