@@ -69,48 +69,91 @@
   <section id="example-row">
     <h2>Example row — lead feed</h2>
     <p class="section-note">Schematic example; data fields, not a quote.</p>
-    <div class="demo-json">Restaurant Name  ·  Dining  ·  3.6★ (412 reviews)  ·  2★ on 2026-11-12: "Waited 50 minutes and the food was cold." [review link]  ·  +61 xxx xxx xxx  ·  restaurantname.com.au  ·  owner name  ·  reservations@restaurantname.com.au</div>
+    <dl class="row-demo">
+      <div class="rd-item">
+        <dt>Business</dt>
+        <dd>Restaurant Name — Dining — 3.6★ (412 reviews)</dd>
+      </div>
+      <div class="rd-item">
+        <dt>Fresh review</dt>
+        <dd>2★ on 2026-11-12 — “Waited 50 minutes and the food was cold.” <span class="rd-link">direct review link</span></dd>
+      </div>
+      <div class="rd-item">
+        <dt>Contacts</dt>
+        <dd>+61 xxx xxx xxx — restaurantname.com.au — reservations@restaurantname.com.au</dd>
+      </div>
+      <div class="rd-item">
+        <dt>Owner</dt>
+        <dd>owner name, where public</dd>
+      </div>
+    </dl>
   </section>
 
   <section id="packages">
     <h2>Packages — lead feed</h2>
-    <div class="packages">
-      <div class="pkg">
-        <span class="pkg-name">Starter</span>
-        <span class="pkg-price">EUR 50 <small>+ VAT</small></span>
-        <ul>
-          <li>50 leads per month</li>
-          <li>Weekly CSV</li>
-          <li>One niche + region</li>
-          <li>Review link</li>
-          <li>Phone, website</li>
-        </ul>
-        <p class="pkg-note">Free 50-lead sample before you commit.</p>
-      </div>
-      <div class="pkg">
-        <span class="pkg-name">Business</span>
-        <span class="pkg-price">EUR 100 <small>+ VAT</small></span>
-        <ul>
-          <li>100 leads per month</li>
-          <li>Everything in Starter</li>
-          <li>Owner names where public</li>
-          <li>Contact emails prioritized</li>
-        </ul>
-        <p class="pkg-note">The working default for one sales team.</p>
-      </div>
-      <div class="pkg featured">
-        <span class="pkg-name">Professional</span>
-        <span class="pkg-price">EUR 300 <small>+ VAT</small></span>
-        <ul>
-          <li>300 leads per month</li>
-          <li>Everything in Business</li>
-          <li>Multiple niches and regions</li>
-          <li>Priority turnaround</li>
-          <li>Monthly review call</li>
-        </ul>
-        <p class="pkg-note">Multi-region reputation agencies.</p>
-      </div>
-    </div>
+    <table class="compare">
+      <thead>
+        <tr>
+          <th scope="col">Package</th>
+          <th scope="col">Starter</th>
+          <th scope="col">Business</th>
+          <th scope="col" class="c-featured">Professional</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Price</th>
+          <td>EUR 50 <small>+ VAT</small></td>
+          <td>EUR 100 <small>+ VAT</small></td>
+          <td class="c-featured">EUR 300 <small>+ VAT</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Leads / month</th>
+          <td>50</td>
+          <td>100</td>
+          <td>300</td>
+        </tr>
+        <tr>
+          <th scope="row">Weekly CSV</th>
+          <td>✓</td><td>✓</td><td>✓</td>
+        </tr>
+        <tr>
+          <th scope="row">Niches / regions</th>
+          <td>one</td>
+          <td>one</td>
+          <td>multiple</td>
+        </tr>
+        <tr>
+          <th scope="row">Review link</th>
+          <td>✓</td><td>✓</td><td>✓</td>
+        </tr>
+        <tr>
+          <th scope="row">Phone, website</th>
+          <td>✓</td><td>✓</td><td>✓</td>
+        </tr>
+        <tr>
+          <th scope="row">Owner names (public)</th>
+          <td>—</td><td>✓</td><td>✓</td>
+        </tr>
+        <tr>
+          <th scope="row">Emails prioritized</th>
+          <td>—</td><td>✓</td><td>✓</td>
+        </tr>
+        <tr>
+          <th scope="row">Priority turnaround</th>
+          <td>—</td><td>—</td><td>✓</td>
+        </tr>
+        <tr>
+          <th scope="row">Monthly review call</th>
+          <td>—</td><td>—</td><td>✓</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="compare-notes">
+      <li><b>Starter</b> — free 50-lead sample before you commit.</li>
+      <li><b>Business</b> — the working default for one sales team.</li>
+      <li><b>Professional</b> — for multi-region reputation agencies.</li>
+    </ul>
   </section>
 
   <section id="how-it-works">

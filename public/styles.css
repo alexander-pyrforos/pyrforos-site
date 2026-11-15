@@ -142,26 +142,47 @@
     background: var(--bg2); color: var(--fg);
   }
 
-  /* ---- packages (services) ---- */
-  .packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  @media (max-width: 640px) { .packages { grid-template-columns: 1fr; } }
-  .pkg {
-    display: flex; flex-direction: column; gap: 6px;
+  /* ---- services: example row + package comparison ---- */
+  .row-demo {
+    margin: 0; display: flex; flex-direction: column; gap: 0;
     background: var(--card); border: 1px solid var(--line); border-radius: 10px;
-    padding: 15px 17px;
+    overflow: hidden;
   }
-  .pkg.featured { border-color: var(--accent-soft); }
-  .pkg-name {
+  .rd-item {
+    display: grid; grid-template-columns: 8.5em 1fr; gap: 12px;
+    padding: 10px 15px; border-bottom: 1px solid var(--line); align-items: baseline;
+  }
+  .rd-item:last-child { border-bottom: 0; }
+  .rd-item dt {
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: .72rem; text-transform: uppercase; letter-spacing: .12em;
+    font-size: .68rem; text-transform: uppercase; letter-spacing: .1em;
     color: var(--muted);
   }
-  .pkg-price { font-family: "Instrument Serif", Georgia, serif; font-size: 1.5rem; }
-  .pkg-price small { font-size: .78rem; color: var(--muted); font-family: system-ui, sans-serif; }
-  .pkg-note { margin: 0; font-size: .84rem; color: var(--muted); }
-  .pkg ul { margin: 0; padding-left: 1.15em; font-size: .88rem; color: var(--muted); }
-  .pkg li { margin-bottom: 2px; }
-  .pkg li b { color: var(--fg); font-weight: 550; }
+  .rd-item dd { margin: 0; font-size: .9rem; color: var(--fg); overflow-wrap: anywhere; }
+  .rd-item .rd-link {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: .72rem; color: var(--accent); white-space: nowrap;
+  }
+  .compare { width: 100%; border-collapse: collapse; font-size: .86rem; }
+  .compare th, .compare td {
+    text-align: left; padding: 7px 9px; border-bottom: 1px solid var(--line);
+    vertical-align: baseline;
+  }
+  .compare thead th {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: .68rem; text-transform: uppercase; letter-spacing: .1em;
+    color: var(--muted); border-bottom: 1px solid var(--line-strong);
+  }
+  .compare tbody th {
+    font-weight: 400; font-size: .82rem; color: var(--muted);
+  }
+  .compare td { color: var(--fg); overflow-wrap: anywhere; }
+  .compare td small { color: var(--muted); font-size: .74rem; white-space: nowrap; }
+  .compare .c-featured { color: var(--accent); }
+  .compare tbody .c-featured { background: var(--accent-soft); }
+  .compare-notes { margin: 10px 0 0; padding-left: 1.15em; font-size: .84rem; color: var(--muted); }
+  .compare-notes li { margin-bottom: 2px; }
+  .compare-notes b { color: var(--fg); font-weight: 550; }
 
   .cta { display: flex; flex-wrap: wrap; gap: 10px; }
   .btn {
