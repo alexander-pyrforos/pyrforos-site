@@ -15,11 +15,6 @@ export default defineConfig({
         plugins: [
           cloudflareTest({
             wrangler: { configPath: "./wrangler.jsonc" },
-            miniflare: {
-              // outbound requests (Telegram Bot API) are intercepted
-              // in tests via cloudflare:test's fetchMock
-              outboundService: (request) => fetchMock.fetch(request),
-            },
           }),
         ],
         test: {

@@ -48,6 +48,20 @@ it("sendMessage resolves even when telegram is down", async () => {
   expect(spy).toHaveBeenCalledTimes(1);
 });
 
+it("sendMessage logs instead of throwing when telegram responds non-ok", async () => {
+  const spy = vi
+    .fn()
+    .mockResolvedValue(new Response('{"ok":false,"description":"chat not found"}', { status: 400 }));
+  const errSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+  await expect(
+    sendMessage({ TG_BOT_TOKEN: "t", TG_CHAT_ID: "1" }, "text", spy as unknown as typeof fetch),
+  ).resolves.toBeUndefined();
+  expect(spy).toHaveBeenCalledTimes(1);
+  expect(errSpy).toHaveBeenCalledTimes(1);
+  expect(String(errSpy.mock.calls[0][0])).toContain("tg send failed");
+  expect(String(errSpy.mock.calls[0].join(" "))).toContain("400");
+});
+
 it("sendMessage skips when no token or no chat id configured", async () => {
   const spy = vi.fn().mockResolvedValue(FETCH_OK());
   await sendMessage({ TG_CHAT_ID: "1" }, "text", spy as unknown as typeof fetch);

@@ -33,11 +33,18 @@ export async function sendMessage(
 ): Promise<void> {
   if (!cfg.TG_BOT_TOKEN || !cfg.TG_CHAT_ID) return;
   try {
-    await fetcher(`https://api.telegram.org/bot${cfg.TG_BOT_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ chat_id: cfg.TG_CHAT_ID, text }),
-    });
+    const res = await fetcher(
+      `https://api.telegram.org/bot${cfg.TG_BOT_TOKEN}/sendMessage`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: cfg.TG_CHAT_ID, text }),
+      },
+    );
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      console.error("tg send failed", res.status, detail);
+    }
   } catch {
     // Telegram is best-effort; the lead is already stored.
   }
