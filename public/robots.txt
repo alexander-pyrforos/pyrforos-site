@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://pyrforos.xyz/sitemap.xml
+
 # AI training crawlers — disallowed
 User-agent: GPTBot
 Disallow: /
