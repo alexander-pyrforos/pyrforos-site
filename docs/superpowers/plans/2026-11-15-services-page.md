@@ -2,13 +2,13 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add a Services teaser section to `index.html` and a full `/services` page (ORM lead-feed service, 3 paid packages) with SEO wiring, no worker/D1 changes.
+**Goal:** Add a Services teaser section (two services) to `index.html` and a full `/services` page (ORM lead feed with 3 packages + AI data-structuring service with project pricing) with SEO wiring, no worker/D1 changes.
 
 **Architecture:** Cloudflare Workers static assets from `public/` (auto-trailing-slash serves `/services` → `services.html`). New markup + CSS only; all styling reuses existing design tokens; JSON-LD `Service`/`Offer` for SEO; new `sitemap.xml` + `llms.txt` entry.
 
 **Tech Stack:** Static HTML/CSS, Schema.org JSON-LD, existing vitest worker suite untouched.
 
-**Spec:** `docs/superpowers/specs/2026-11-15-services-section-design.md`
+**Spec:** `docs/superpowers/specs/2026-11-15-services-section-design.md` + owner addition 2026-11-15: AI data structuring is a second service (no fixed prices — "scoped per pipeline", CTA by email).
 
 ## Global Constraints
 
@@ -87,39 +87,40 @@ git commit -m "site: package card styles for services page"
 Head pattern — copy `index.html` head's charset/viewport/font links/styles link, then:
 
 - `<title>Services — Alexander Pyrforos</title>`
-- meta description: `Weekly lead feeds for sales and reputation-management teams: businesses hit by fresh 1-2 star public reviews, with review link, phone, website and contact emails. Packages from EUR 50 + VAT.`
+- meta description: `Two data services for sales and reputation-management teams: weekly lead feeds capturing businesses hit by fresh 1-2 star public reviews (packages from EUR 50 + VAT), and LLM pipelines that turn unstructured text into structured data. Scoped per project.`
 - `<link rel="canonical" href="https://pyrforos.xyz/services">`
 - og: same title/description, `og:type article`, `og:url https://pyrforos.xyz/services`.
-- JSON-LD (one script block; must parse):
+- JSON-LD (one script block; must parse — an ARRAY of two Service entries; the second has NO `offers` key at all; "project-based pricing" lives only in its description):
 
 ```json
-{"@context":"https://schema.org","@type":"Service","name":"Weekly lead feed","serviceType":"B2B lead data feed","provider":{"@type":"Person","name":"Alexander Pyrforos","url":"https://pyrforos.xyz"},"areaServed":"Worldwide","description":"Weekly CSV feed of local businesses that recently received a fresh 1-2 star public review, with the review link, contact details and public emails.","offers":[{"@type":"Offer","name":"Starter","price":"50","priceCurrency":"EUR","url":"https://pyrforos.xyz/services","description":"50 leads per month, weekly CSV, one niche and region."},{"@type":"Offer","name":"Business","price":"100","priceCurrency":"EUR","url":"https://pyrforos.xyz/services","description":"100 leads per month, weekly CSV, owner names where public, emails prioritized."},{"@type":"Offer","name":"Professional","price":"300","priceCurrency":"EUR","url":"https://pyrforos.xyz/services","description":"300 leads per month, weekly CSV, multiple niches and regions, priority turnaround, monthly call."}]}
+[{"@context":"https://schema.org","@type":"Service","name":"Weekly lead feed","serviceType":"B2B lead data feed","provider":{"@type":"Person","name":"Alexander Pyrforos","url":"https://pyrforos.xyz"},"areaServed":"Worldwide","description":"Weekly CSV feed of local businesses that recently received a fresh 1-2 star public review, with the review link, contact details and public emails.","offers":[{"@type":"Offer","name":"Starter","price":"50","priceCurrency":"EUR","url":"https://pyrforos.xyz/services","description":"50 leads per month, weekly CSV, one niche and region."},{"@type":"Offer","name":"Business","price":"100","priceCurrency":"EUR","url":"https://pyrforos.xyz/services","description":"100 leads per month, weekly CSV, owner names where public, emails prioritized."},{"@type":"Offer","name":"Professional","price":"300","priceCurrency":"EUR","url":"https://pyrforos.xyz/services","description":"300 leads per month, weekly CSV, multiple niches and regions, priority turnaround, monthly call."}]},{"@context":"https://schema.org","@type":"Service","name":"AI data structuring","serviceType":"LLM data pipeline development","provider":{"@type":"Person","name":"Alexander Pyrforos","url":"https://pyrforos.xyz"},"areaServed":"Worldwide","description":"Fine-tuned open-weight LLM pipelines turning unstructured text — messages, documents, catalogs — into clean structured records. Project-based pricing, scoped per pipeline."}]
 ```
 
 Icons/links in head: same favicon `data:image/svg+xml` line, Google Fonts line, `styles.css` link as `index.html:19-21`.
 
 Body (`<div class="wrap">`): copy the `#theme-toggle` button markup from `index.html:27-30`, then:
 
-- header: `<p class="eyebrow">data &amp; automation engineer · prague</p>` + `<h1>Lead feeds for teams that <em>follow up</em></h1>` + lede paragraph (2–3 sentences, own words): the feed catches local businesses right after a fresh 1–2★ public review lands — the moment they need reputation help — and drops a clean CSV on the sales team every week.
-- `<section><h2>What you get</h2>` — `ul` with exactly these li:
+- header: `<p class="eyebrow">data &amp; automation engineer · prague</p>` + `<h1>Data services for teams that <em>sell</em></h1>` + lede paragraph (2–3 sentences, own words): two services built and run by one engineer — a weekly lead feed that catches businesses right after a fresh 1–2★ public review lands, and LLM pipelines that turn messy unstructured text into structured data.
+- `<section id="lead-feed"><h2>Lead feed</h2>` — `.section-note` one-liner (weekly CSV for sales and reputation teams) + `ul` with exactly these li:
   - business name, category, current public rating + total review count
   - the fresh 1–2 star review: date, text excerpt, direct link to that exact review
   - phone, website, address
   - owner/manager name where public (Business and Professional)
   - contact email where publicly available
-- `<section><h2>Example row</h2>` — `<p class="section-note">Schematic example; data fields, not a quote.</p>` + `<div class="demo-json">` one line:
++ `<section id="ai-structuring"><h2>AI data structuring</h2>` — `.section-note` one-liner (LLM pipelines for unstructured text) + paragraph (own words): fine-tuned open-weight models turn messages, documents and catalogs into clean structured records — classification, extraction, enrichment, at pipeline scale, self-hosted. + `ul`: exact fields decided with you · output as CSV/JSON/database-ready · fine-tuned open-weight models or frontier APIs, as fits · runs on-prem or in EU cloud. + one-line note: project-based pricing — scoped per pipeline, no fixed tiers.
+- `<section id="example-row"><h2>Example row — lead feed</h2>` — `<p class="section-note">Schematic example; data fields, not a quote.</p>` + `<div class="demo-json">` one line:
 
 ```
 Restaurant Name  ·  Dining  ·  3.6★ (412 reviews)  ·  2★ on 2026-11-12: "Waited 50 minutes and the food was cold." [review link]  ·  +61 xxx xxx xxx  ·  restaurantname.com.au  ·  owner name  ·  reservations@restaurantname.com.au
 ```
 
-- `<section><h2>Packages</h2>` — `<div class="packages">` with three `<div class="pkg">` (Professional gets `featured`); each: `.pkg-name` + `.pkg-price` + `.pkg ul` features + `.pkg-note`.
+- `<section id="packages"><h2>Packages — lead feed</h2>` — `<div class="packages">` with three `<div class="pkg">` (Professional gets `featured`); each: `.pkg-name` + `.pkg-price` + `.pkg ul` features + `.pkg-note`.
   - Starter: price line `EUR 50 <small>+ VAT</small>`; ul: 50 leads/month · weekly CSV · one niche + region · review link · phone, website; note: Free 50-lead sample before you commit.
   - Business: `EUR 100 <small>+ VAT</small>`; ul: 100 leads/month · everything in Starter · owner names where public · contact emails prioritized; note: The working default for one sales team.
   - Professional: `EUR 300 <small>+ VAT</small>`; ul: 300 leads/month · everything in Business · multiple niches and regions · priority turnaround · monthly review call; note: Multi-region reputation agencies.
 - `<section><h2>How it works</h2>` — `ul`: 1) you name the niche + city/region; 2) a free 50-lead sample arrives within 48 hours as CSV (UTF-8, opens in Excel/Sheets); 3) the weekly feed lands in your inbox, cancel anytime.
 - `<section><h2>Compliance</h2>` — one short paragraph (own words, factual): B2B marketing service; only publicly listed business contacts, opt-outs honored immediately, sender always identified. Not legal advice — keep one sentence.
-- `<section><h2>Contact</h2>` — `.cta` with `<a class="btn" href="mailto:alexander.pyrforos@gmail.com">Request the free sample</a>` and `<a class="btn ghost" href="/">Back to the portfolio</a>`.
+- `<section><h2>Contact</h2>` — `.cta` with `<a class="btn" href="mailto:alexander.pyrforos@gmail.com?subject=Lead feed sample">Request the free sample</a>`, `<a class="btn ghost" href="mailto:alexander.pyrforos@gmail.com?subject=AI data structuring scope">Scope an AI pipeline</a>`, and `<a class="btn ghost" href="/">Back to the portfolio</a>`.
 - footer: copy `index.html:147-150` structure (`© 2026 Alexander Pyrforos`, `pyrforos.xyz`).
 - scripts: only `<script type="module" src="/js/theme.js"></script>` before `</body>`.
 
@@ -158,10 +159,15 @@ git commit -m "site: /services page — lead feed service, packages, SEO"
       <p>Local businesses hit by fresh 1–2 star public reviews — review link, contacts, emails. For sales and reputation teams. Packages from EUR 50.</p>
       <span class="tags">csv · weekly · tailored niche</span>
     </a>
+    <a class="card" href="/services">
+      <span class="top"><h3>AI data structuring</h3><span class="kind">service</span></span>
+      <p>LLM pipelines that turn messages, documents and catalogs into clean structured records — fine-tuned, self-hosted. Scoped per pipeline.</p>
+      <span class="tags">llm · fine-tuning · structured data</span>
+    </a>
   </section>
 ```
 
-- [ ] **Step 2: Verify** — Run: `grep -c 'id="services"' public/index.html`, Expected: `1`; Run: `grep -c 'href="/services"' public/index.html`, Expected: `1`
+- [ ] **Step 2: Verify** — Run: `grep -c 'id="services"' public/index.html`, Expected: `1`; Run: `grep -c 'href="/services"' public/index.html`, Expected: `2`
 - [ ] **Step 3: Verify suite green** — Run: `npx vitest run`, Expected: PASS
 - [ ] **Step 4: Commit**
 
@@ -193,7 +199,7 @@ git commit -m "site: services teaser card on index"
 - [ ] **Step 2: Append to llms.txt Pages list**
 
 ```
-- [/services](https://pyrforos.xyz/services) Lead feed service for sales and reputation teams: contents, packages (EUR 50/100/300 + VAT), delivery, sample request.
+- [/services](https://pyrforos.xyz/services) Data services: weekly lead feed for sales and reputation teams (packages EUR 50/100/300 + VAT) and AI data structuring (LLM pipelines, project pricing). Contents, delivery, sample request.
 ```
 
 - [ ] **Step 3: Verify XML parses** — Run: `python3 -c "import xml.etree.ElementTree as ET; ET.parse('public/sitemap.xml'); print('xml ok')"`, Expected: `xml ok`
