@@ -184,6 +184,39 @@
   .compare-notes li { margin-bottom: 2px; }
   .compare-notes b { color: var(--fg); font-weight: 550; }
 
+  /* ---- lead form ---- */
+  .lead-form { max-width: 100%; }
+  .f-row {
+    display: grid; grid-template-columns: 9.5em 1fr; gap: 12px;
+    align-items: baseline; margin-bottom: 10px;
+  }
+  .f-row label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: .68rem; text-transform: uppercase; letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .f-row .f-optional { text-transform: none; letter-spacing: 0; opacity: .8; }
+  .f-row input, .f-row select, .f-row textarea {
+    font: inherit; font-size: .9rem; color: var(--fg);
+    background: var(--bg2); border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 10px; width: 100%; max-width: 34em;
+  }
+  .f-row textarea { resize: vertical; }
+  .f-row input:focus-visible, .f-row select:focus-visible, .f-row textarea:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: -1px;
+  }
+  .f-row input:user-invalid { border-color: color-mix(in srgb, var(--accent) 60%, transparent); }
+  .f-honeypot {
+    position: absolute !important; left: -9999px; width: 1px; height: 1px;
+    overflow: hidden;
+  }
+  .f-consent { font-size: .78rem; color: var(--muted); margin: 4px 0 16px; max-width: 54ch; }
+  .form-status { margin: 12px 0 0; font-size: .9rem; color: var(--ok); min-height: 1.4em; }
+  .form-status.is-error { color: var(--accent); }
+  @media (max-width: 480px) {
+    .f-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+
   .cta { display: flex; flex-wrap: wrap; gap: 10px; }
   .btn {
     display: inline-block; padding: 9px 18px; border-radius: 8px;

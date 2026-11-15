@@ -169,18 +169,61 @@
     <h2>Compliance</h2>
     <p>
       A B2B data service: only publicly listed business contacts, opt-outs
-      honored immediately, sender always identified. This page is a product
+      honored immediately, sender always identified. Submitting the form
+      shares only the fields you typed; they are used to answer you and are
+      kept in the site's private database. This page is a product
       description, not legal advice.
     </p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <div class="cta">
-      <a class="btn" href="mailto:alexander.pyrforos@gmail.com?subject=Lead%20feed%20sample">Request the free sample</a>
-      <a class="btn ghost" href="mailto:alexander.pyrforos@gmail.com?subject=AI%20data%20structuring%20scope">Scope an AI pipeline</a>
-      <a class="btn ghost" href="/">Back to the portfolio</a>
-    </div>
+    <form id="lead-form" class="lead-form" novalidate>
+      <div class="f-row">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" required autocomplete="name">
+      </div>
+      <div class="f-row">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" required autocomplete="email">
+      </div>
+      <div class="f-row">
+        <label for="f-service">Service</label>
+        <select id="f-service" name="service">
+          <option value="lead-feed">Weekly lead feed</option>
+          <option value="ai-structuring">AI data structuring</option>
+        </select>
+      </div>
+      <div class="f-row" id="f-package-row">
+        <label for="f-package">Package</label>
+        <select id="f-package" name="package">
+          <option value="starter">Starter — EUR 50</option>
+          <option value="business" selected>Business — EUR 100</option>
+          <option value="professional">Professional — EUR 300</option>
+        </select>
+      </div>
+      <div class="f-row">
+        <label for="f-niche">Niche + city/region</label>
+        <input id="f-niche" name="niche" type="text" required placeholder="e.g. dental clinics, Sydney">
+      </div>
+      <div class="f-row">
+        <label for="f-message">Message <span class="f-optional">optional</span></label>
+        <textarea id="f-message" name="message" rows="3"></textarea>
+      </div>
+      <div class="f-honeypot" aria-hidden="true">
+        <label for="f-website">Website</label>
+        <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="f-consent">
+        Submitting shares only the fields you typed — used to answer you,
+        nothing else. Removal requests: reply to the confirmation, honored.
+      </p>
+      <div class="cta">
+        <button class="btn" type="submit">Send request</button>
+        <a class="btn ghost" href="/">Back to the portfolio</a>
+      </div>
+      <p class="form-status" id="form-status" role="status"></p>
+    </form>
   </section>
 
   <footer>
@@ -190,5 +233,6 @@
 
 </div>
 <script type="module" src="/js/theme.js"></script>
+<script type="module" src="/js/contact.js"></script>
 </body>
 </html>
