@@ -10,7 +10,10 @@ export interface Env {
 
 export default {
   async fetch(req: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-    const { pathname } = new URL(req.url);
+    const { pathname, hostname, search } = new URL(req.url);
+    if (hostname === "www.pyrforos.xyz") {
+      return Response.redirect("https://pyrforos.xyz" + pathname + search, 301);
+    }
     if (pathname.startsWith("/api/")) {
       return dispatchApi(req, env, ctx);
     }

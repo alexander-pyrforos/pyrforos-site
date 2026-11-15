@@ -3,45 +3,84 @@ Allow: /
 
 Sitemap: https://pyrforos.xyz/sitemap.xml
 
-# AI training crawlers — disallowed
+# AI training crawlers — site blocked, but the service page and llms.txt
+# stay readable so answer engines (search/excerpt use) can cite them.
 User-agent: GPTBot
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: CCBot
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: ClaudeBot
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: anthropic-ai
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: Claude-Web
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: Google-Extended
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: Bytespider
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: MistralAI-Training
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: meta-externalagent
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: Amazonbot
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: Applebot-Extended
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: Diffbot
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: omgili
+Allow: /llms.txt
+Allow: /services
 Disallow: /
 
 User-agent: cohere-ai
+Allow: /llms.txt
+Allow: /services
+Disallow: /
+
+# Answer/search crawlers — allowed on the service page and llms.txt
+User-agent: OAI-SearchBot
+Allow: /llms.txt
+Allow: /services
+
+User-agent: PerplexityBot
+Allow: /llms.txt
+Allow: /services
 Disallow: /
