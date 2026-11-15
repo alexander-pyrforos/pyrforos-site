@@ -42,7 +42,12 @@
     </p>
   </header>
 
-  <section id="lead-feed">
+  <nav class="svc-tabs" aria-label="Services">
+    <a href="#lead-feed" data-tab="lead-feed">Lead feed</a>
+    <a href="#ai-structuring" data-tab="ai-structuring">AI data structuring</a>
+  </nav>
+
+  <section id="lead-feed" data-group="lead-feed">
     <h2>Lead feed</h2>
     <p class="section-note">A weekly CSV for sales and reputation-management teams.</p>
     <ul>
@@ -54,7 +59,7 @@
     </ul>
   </section>
 
-  <section id="ai-structuring">
+  <section id="ai-structuring" data-group="ai-structuring">
     <h2>AI data structuring</h2>
     <p class="section-note">LLM pipelines for unstructured text — built, fine-tuned, self-hosted.</p>
     <p>
@@ -73,7 +78,7 @@
     </ul>
   </section>
 
-  <section id="ai-example">
+  <section id="ai-example" data-group="ai-structuring">
     <h2>Example — messages to records</h2>
     <p class="section-note">Schematic example; data fields, not a quote.</p>
     <dl class="row-demo">
@@ -92,7 +97,7 @@
     </dl>
   </section>
 
-  <section id="ai-process">
+  <section id="ai-process" data-group="ai-structuring">
     <h2>How an AI pipeline is built</h2>
     <ul>
       <li>1 — Scoping: you show a sample of real messages; we agree on output fields and edge cases.</li>
@@ -103,7 +108,7 @@
     <p class="section-note">Project-based pricing — scoped per pipeline, no fixed tiers.</p>
   </section>
 
-  <section id="example-row">
+  <section id="example-row" data-group="lead-feed">
     <h2>Example row — lead feed</h2>
     <p class="section-note">Schematic example; data fields, not a quote.</p>
     <dl class="row-demo">
@@ -126,7 +131,7 @@
     </dl>
   </section>
 
-  <section id="packages">
+  <section id="packages" data-group="lead-feed">
     <h2>Packages — lead feed</h2>
     <table class="compare">
       <thead>
@@ -193,7 +198,7 @@
     </ul>
   </section>
 
-  <section id="how-it-works">
+  <section id="how-it-works" data-group="lead-feed">
     <h2>How it works</h2>
     <ul>
       <li>You name the niche and the city/region you target.</li>
@@ -274,5 +279,6 @@
 </div>
 <script type="module" src="/js/theme.js"></script>
 <script type="module" src="/js/contact.js"></script>
+<script type="module" src="/js/service-tabs.js"></script>
 </body>
 </html>

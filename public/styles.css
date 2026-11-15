@@ -47,6 +47,16 @@
   ::selection { background: var(--accent-soft); }
   .wrap { max-width: 660px; margin: 0 auto; padding-block: 56px 64px; }
 
+  /* ---- services tabs ---- */
+  .svc-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .svc-tabs a {
+    font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .78rem;
+    border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px;
+    background: var(--bg2); color: var(--fg);
+  }
+  .svc-tabs a:hover { border-color: var(--accent-soft); text-decoration: none; }
+  .svc-tabs a[aria-current="true"] { border-color: var(--accent); color: var(--accent); }
+
   /* ---- hero ---- */
   .who { margin-bottom: 44px; }
   .site-nav {
