@@ -5,3 +5,4 @@
 ## Pages
 
 - [/](https://pyrforos.xyz) Portfolio: agent demo, case dossiers, live voting product.
+- [/services](https://pyrforos.xyz/services) Data services: weekly lead feed for sales and reputation teams (packages EUR 50/100/300 + VAT) and AI data structuring (LLM pipelines, project pricing). Contents, delivery, sample request.
