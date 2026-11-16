@@ -3,7 +3,72 @@ Allow: /
 
 Sitemap: https://pyrforos.xyz/sitemap.xml
 
-# AI answer engines are explicitly welcome to read, excerpt and cite the site.
-# Training refusals are declared via Cloudflare Content-Signal (ai-train=no).
-# NOTE: any edge bot-blocking (Cloudflare Security → Bots / AI Audit) must be
-# configured to match this policy — robots.txt alone cannot override WAF.
+# Explicit Allow groups so Cloudflare's managed-robots enforcement
+# (Security -> Bots) treats every AI agent as allowed site-wide.
+# Training refusal stays declared via Content-Signal: ai-train=no.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-Search
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: MistralAI-Training
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
